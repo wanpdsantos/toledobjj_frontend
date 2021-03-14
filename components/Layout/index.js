@@ -1,4 +1,4 @@
-import {makeStyles} from  '@material-ui/core'
+import { makeStyles } from  '@material-ui/core'
 import Head from 'next/head'
 import TopBar from './TopBar'
 
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden',
         paddingTop: '7em',
         [theme.breakpoints.up('lg')]:{
-            paddingLeft: 256,
+            paddingLeft: 0,
         },
 
     },
@@ -25,13 +25,14 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flex: '1 1 auto',
         overflow: 'hidden',
+        
 
     },
     content:{
-        flex: '1 1 auto',
+        display: 'flex',
+        justifyContent: 'center',
         height: '100%',
-        overflow: 'auto'
-
+        width: '100%',
     },
 
 }));
