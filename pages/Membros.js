@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 function Membros() {
   return (
     
-    <Layout title="TOLEDO BJJ ACADEMY">
+    <Layout title="TOLEDO BJJ - Membros">
 
       <h1>
         Site em construção. Em breve teremos novidades!
@@ -12,6 +12,6 @@ function Membros() {
 
     </Layout>
   )
-}
+};
 
 export default Membros;
