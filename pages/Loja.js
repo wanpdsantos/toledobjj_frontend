@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 
-export default function Loja() {
+function Loja() {
   return (
     
     <Layout title="TOLEDO BJJ ACADEMY">
@@ -13,3 +13,5 @@ export default function Loja() {
     </Layout>
   )
 }
+
+export default Loja;
