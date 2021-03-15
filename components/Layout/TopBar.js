@@ -3,7 +3,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import Link from 'next/link'
+import Hidden from '@material-ui/core/Hidden';
+import Link from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
         cursor: 'pointer',
         height: '5em',
         marginLeft: theme.spacing(3),
+        
     },
     menuItems:{
         padding:'2px 4px',
@@ -42,15 +44,23 @@ function TopBar () {
 
             <Toolbar className={classes.toolbar}>
 
-            
-                <Box alignItems='center'>
-                    <Link href='/'>
-                        <img src="/img/TopBar_Logo.png" alt="Logo" className={classes.logo}/>
-                    </Link>
-                </Box>
+                <Hidden smDown>
+                    <Box alignItems='center'>
+                        <Link href='/'>
+                            <img src="/img/TopBar_Logo.png" alt="Logo" className={classes.logo}/>
+                        </Link>
+                    </Box>
+                </Hidden>
 
+                <Hidden mdUp>
+                    <Box alignItems='center'>
+                        <Link href='/'>
+                            <img src="/img/TopBar_LogoSM.png" alt="Logo" className={classes.logo}/>
+                        </Link>
+                    </Box>
+                </Hidden>
+                
                 <Box className={classes.menuItems}>
-
                     <Link href='/Membros'>
                         <Button color="inherit">Membros</Button>
                     </Link>
@@ -62,8 +72,9 @@ function TopBar () {
                     <Link href='/Loja'>
                         <Button color="inherit">Loja</Button>
                     </Link>
-            
                 </Box>
+                
+
 
                 <Box>
                     <Button color="inherit">Entrar</Button>

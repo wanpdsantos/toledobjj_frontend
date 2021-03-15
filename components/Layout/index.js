@@ -19,14 +19,11 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('lg')]:{
             paddingLeft: 0,
         },
-
     },
     contentContainer:{
         display: 'flex',
         flex: '1 1 auto',
         overflow: 'hidden',
-        
-
     },
     content:{
         display: 'flex',
