@@ -4,6 +4,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
+import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import Link from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
@@ -44,41 +46,54 @@ function TopBar () {
 
             <Toolbar className={classes.toolbar}>
 
-                <Hidden smDown>
-                    <Box alignItems='center'>
-                        <Link href='/'>
-                            <img src="/img/TopBar_Logo.png" alt="Logo" className={classes.logo}/>
-                        </Link>
-                    </Box>
-                </Hidden>
-
                 <Hidden mdUp>
+
+                    <Box alignItems='center'>
+                        <MenuIcon/>
+                    </Box>
+
                     <Box alignItems='center'>
                         <Link href='/'>
                             <img src="/img/TopBar_LogoSM.png" alt="Logo" className={classes.logo}/>
                         </Link>
                     </Box>
+
+                    <Box alignItems='center'>
+                        <AccountCircle/>
+                    </Box>
+                    
                 </Hidden>
-                
-                <Box className={classes.menuItems}>
-                    <Link href='/Membros'>
-                        <Button color="inherit">Membros</Button>
-                    </Link>
 
-                    <Link href='/Sobre'>
-                        <Button color="inherit">Sobre</Button>
-                    </Link>
+                <Hidden smDown>
 
-                    <Link href='/Loja'>
-                        <Button color="inherit">Loja</Button>
-                    </Link>
-                </Box>
-                
+                    <Box alignItems='center'>
+                        <Link href='/'>
+                            <img src="/img/TopBar_Logo.png" alt="Logo" className={classes.logo}/>
+                        </Link>
+                    </Box>
+
+                    <Box className={classes.menuItems}>
+                        <Link href='/Membros'>
+                            <Button color="inherit">Membros</Button>
+                        </Link>
+
+                        <Link href='/Sobre'>
+                            <Button color="inherit">Sobre</Button>
+                        </Link>
+
+                        <Link href='/Loja'>
+                            <Button color="inherit">Loja</Button>
+                        </Link>
+                    </Box>
+
+                    <Box>
+                        <Button color="inherit" startIcon={<AccountCircle/>}>Entrar</Button>
+                    </Box>
+
+                </Hidden>
 
 
-                <Box>
-                    <Button color="inherit">Entrar</Button>
-                </Box>
+
 
             </Toolbar>
 
