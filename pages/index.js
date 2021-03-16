@@ -3,7 +3,14 @@ import Layout from '../components/Layout';
 import Box from '@material-ui/core/Box';
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import Paper from '@material-ui/core/Paper'
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import AvTimer from '@material-ui/icons/AvTimer';
+import LocationOnOutlined from '@material-ui/icons/LocationOnOutlined';
+import WhatsApp from '@material-ui/icons/WhatsApp';
+import Instagram from '@material-ui/icons/Instagram';
+import AppBar from '@material-ui/core/AppBar';
+import Link from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -12,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     
   },
-  carousel: {
+  imgCarousel: {
     cursor: 'pointer',
     height: '70vh',
     marginLeft: theme.spacing(3),
@@ -21,9 +28,39 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     width: '100vw',
-    backgroundImage:'/img/home/HOME_Carousel_BoxBackground.jpg',
   },
-  
+  boxSessions: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: "center",
+  },
+  paperGrid: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '15em',
+    width:'15em',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop:'1em',
+  },
+  boxEndereco: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    width: '90%',
+    fontSize: '1.3em',
+  },
+  footer: {
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
+    minHeight:'8em',
+    position:'sticky',
+    top: 'auto',
+    bottom: 0,
+  },
 
 }));
 
@@ -31,48 +68,135 @@ function Home() {
 
   const classes = useStyles();
 
+  const carouselItems = [
+    {
+      thumb: "/img/home/HOME_Carousel_1.jpg",
+      title: "Training 1",
+    },
+    {
+      thumb: "/img/home/HOME_Carousel_2.jpg",
+      title: "Training 1",
+    },
+    {
+      thumb: "/img/home/HOME_Carousel_3.jpg",
+      title: "Training 1",
+    },
 
+  ];
 
   return (
     
     <Layout title="TOLEDO BJJ ACADEMY">
       
-      <Box flexDirection='row'>
-        <Box>
+      <Box flexDirection='row' >
 
+        <Box >
           <Carousel>
-            
-            <Paper className={classes.paperCarousel}>
-              <img src="/img/home/HOME_Carousel_1.jpg" alt="Training" className={classes.carousel}/>
-            </Paper>
-
-            <Paper className={classes.paperCarousel}>
-              <img src="/img/home/HOME_Carousel_2.jpg" alt="Training" className={classes.carousel}/>
-            </Paper>
-
-            <Paper className={classes.paperCarousel}>
-              <img src="/img/home/HOME_Carousel_3.jpg" alt="Training" className={classes.carousel}/>
-            </Paper>
-
+            {carouselItems.map((item) => (
+                <Paper className={classes.paperCarousel}>
+                  <img src={item.thumb} alt={item.title} className={classes.imgCarousel} />
+                </Paper>
+            ))}
           </Carousel>
-        </Box>
-        
-        <Box>
-          <h1>
-            Horarios Disponíveis
-          </h1>
+
         </Box>
 
-        <Box>
-          <h1>
-            Localização
-          </h1>
+        <Box marginTop='2em' className={classes.boxSessions}>
+
+          <Box display='flex' alignItems='center'>
+            <AvTimer/>
+            <h1>Horário das Aulas</h1>
+          </Box>
+
+          <Box width='90%'>
+            <Grid container   
+              direction="row"
+              justify="space-evenly"
+              alignItems="center">
+
+              <Grid key={1} item>
+                <Paper className={classes.paperGrid}>
+                  <h3>Segunda</h3>
+                  <h4>BJJ: 20h - 22h - Pedro Toledo</h4>
+                </Paper>
+              </Grid>
+
+              <Grid key={2} item>
+                <Paper className={classes.paperGrid}>
+                  <h3>Quarta</h3>
+                  <h4>BJJ: 20h - 22h - Pedro Toledo</h4>
+                </Paper>
+              </Grid>
+
+              <Grid key={3} item>
+                <Paper className={classes.paperGrid}>
+                  <h3>Sexta</h3>
+                  <h4>BJJ: 20h - 22h - Pedro Toledo</h4>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Box>
         </Box>
 
-        <Box>
-          <h1>
-            Agende uma Aula Experimental!
-          </h1>
+        <Box marginTop='4em' className={classes.boxSessions}>
+
+          <Box display='flex' alignItems='center'>
+            <LocationOnOutlined/>
+            <h1>Localização</h1>
+          </Box>
+
+          <Box className={classes.boxEndereco}>
+            <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
+              <h3>Rua Inhambupe</h3>
+              <h3>Resgate</h3>
+              <h3>Salvador/BA</h3>
+              <h5>Como Chegar? Virar a primeira direita após Academia SmartFit da Rua Silveira Martins.</h5>
+            </Box>
+
+            <Box>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.166029958064!2d-38.466977684564974!3d-12.961225563114171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161ac2ba457403%3A0x6bc6be9da33acefa!2sR.%20Inhambupe%20-%20Resgate%2C%20Salvador%20-%20BA%2C%2040301-110!5e0!3m2!1spt-BR!2sbr!4v1615851105943!5m2!1spt-BR!2sbr" width="400" height="300"></iframe>
+            </Box>
+          </Box>
+        </Box>
+
+        <Box marginTop='4em' className={classes.boxSessions}>
+          <Box display='flex' alignItems='center'>
+            <h1>Venha fazer parte da Equipe!    </h1>
+            <img src="/img/home/HOME_PunchIcon.jpg" height='50em' alt="Punch"/>
+          </Box>
+
+          <Box display='flex' alignItems='center'>
+            <h1>
+              Agende uma Aula Experimental!
+            </h1>
+            <a href="https://l.instagram.com/?u=http%3A%2F%2Ftinyurl.com%2Ftf0jq6ou%2F&e=ATOBV2Y0pJ395F_t3gt4lF0xkqbev136H3N6NgAuvcVGKy4WXDrpMdgNbfT_0vdEq0qmpXApiZf6xTodixbg9FpKpXHosEaL79QXOg&s=1" target="_blank" rel="noopener noreferrer">
+              <WhatsApp fontSize='large'/>
+            </a>
+            
+          </Box>
+
+          <Box>
+            <h1>
+              Siga Nossas Redes
+            </h1>
+          </Box>
+          
+          <Box display='flex' alignItems='center'>
+            <a href='https://www.instagram.com/toledobjjacademy/' target="_blank" rel="noopener noreferrer">
+              <Instagram fontSize='large'/>
+            </a>
+          </Box>
+
+          <Box className={classes.footer}>
+            
+          </Box>
+
+          <AppBar color="primary" className={classes.footer}>
+            
+
+            <h4>TOLEDO BJJ ACADEMY! </h4>
+          </AppBar>
+
         </Box>
 
       </Box>

@@ -29,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         width: '100%',
+        overflowY: 'scroll',
+        overflowX: 'hidden',
     },
 
 }));
