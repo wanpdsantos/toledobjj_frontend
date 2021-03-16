@@ -1,4 +1,4 @@
-import { makeStyles } from  '@material-ui/core';
+import { createMuiTheme, makeStyles, MuiThemeProvider, responsiveFontSizes } from  '@material-ui/core';
 import Layout from '../components/Layout';
 import Box from '@material-ui/core/Box';
 import React from 'react';
@@ -10,7 +10,7 @@ import LocationOnOutlined from '@material-ui/icons/LocationOnOutlined';
 import WhatsApp from '@material-ui/icons/WhatsApp';
 import Instagram from '@material-ui/icons/Instagram';
 import AppBar from '@material-ui/core/AppBar';
-import Link from 'next/link';
+import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles((theme) => ({
 
@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: "center",
+    
   },
   paperGrid: {
     display: 'flex',
@@ -57,12 +58,15 @@ const useStyles = makeStyles((theme) => ({
     alignItems:'center',
     justifyContent:'center',
     minHeight:'8em',
-    position:'sticky',
+    position:'relative',
     top: 'auto',
     bottom: 0,
   },
 
 }));
+
+let theme = createMuiTheme();
+theme = responsiveFontSizes(theme);
 
 function Home() {
 
@@ -136,6 +140,7 @@ function Home() {
               </Grid>
             </Grid>
           </Box>
+
         </Box>
 
         <Box marginTop='4em' className={classes.boxSessions}>
@@ -146,58 +151,71 @@ function Home() {
           </Box>
 
           <Box className={classes.boxEndereco}>
-            <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
-              <h3>Rua Inhambupe</h3>
-              <h3>Resgate</h3>
-              <h3>Salvador/BA</h3>
-              <h5>Como Chegar? Virar a primeira direita após Academia SmartFit da Rua Silveira Martins.</h5>
-            </Box>
+            <Grid container
+              direction="row"
+              justify="space-evenly"
+              alignItems="center">
 
-            <Box>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.166029958064!2d-38.466977684564974!3d-12.961225563114171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161ac2ba457403%3A0x6bc6be9da33acefa!2sR.%20Inhambupe%20-%20Resgate%2C%20Salvador%20-%20BA%2C%2040301-110!5e0!3m2!1spt-BR!2sbr!4v1615851105943!5m2!1spt-BR!2sbr" width="400" height="300"></iframe>
-            </Box>
+              <Grid key={1} item>
+                <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
+                  <h3>Rua Inhambupe</h3>
+                  <h3>Resgate</h3>
+                  <h3>Salvador/BA</h3>
+                  <h5>Como Chegar? Virar a primeira direita após Academia SmartFit da Rua Silveira Martins.</h5>
+                </Box>
+              </Grid>
+
+              <Grid key={2} item>
+                <Box>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.166029958064!2d-38.466977684564974!3d-12.961225563114171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161ac2ba457403%3A0x6bc6be9da33acefa!2sR.%20Inhambupe%20-%20Resgate%2C%20Salvador%20-%20BA%2C%2040301-110!5e0!3m2!1spt-BR!2sbr!4v1615851105943!5m2!1spt-BR!2sbr" width="400" height="300"></iframe>
+                </Box>
+              </Grid>
+
+            </Grid>
+
           </Box>
         </Box>
 
-        <Box marginTop='4em' className={classes.boxSessions}>
-          <Box display='flex' alignItems='center'>
-            <h1>Venha fazer parte da Equipe!    </h1>
-            <img src="/img/home/HOME_PunchIcon.jpg" height='50em' alt="Punch"/>
-          </Box>
+        <Box marginTop='4em' className={classes.boxSessions} width='100%' paddingLeft='5em' paddingRight='5em'>
 
           <Box display='flex' alignItems='center'>
-            <h1>
-              Agende uma Aula Experimental!
-            </h1>
-            <a href="https://l.instagram.com/?u=http%3A%2F%2Ftinyurl.com%2Ftf0jq6ou%2F&e=ATOBV2Y0pJ395F_t3gt4lF0xkqbev136H3N6NgAuvcVGKy4WXDrpMdgNbfT_0vdEq0qmpXApiZf6xTodixbg9FpKpXHosEaL79QXOg&s=1" target="_blank" rel="noopener noreferrer">
-              <WhatsApp fontSize='large'/>
-            </a>
-            
+            <MuiThemeProvider theme={theme}>
+              <Typography variant='h1'>
+                Venha fazer parte da Equipe!
+                <img src="/img/home/HOME_PunchIcon.jpg" height='50em' alt="Punch"/>
+              </Typography>
+            </MuiThemeProvider>
+
           </Box>
 
-          <Box>
-            <h1>
-              Siga Nossas Redes
-            </h1>
-          </Box>
-          
           <Box display='flex' alignItems='center'>
-            <a href='https://www.instagram.com/toledobjjacademy/' target="_blank" rel="noopener noreferrer">
-              <Instagram fontSize='large'/>
-            </a>
+            <MuiThemeProvider theme={theme}>
+              <Typography variant='subtitle1'>
+                Agende uma Aula Experimental!
+                <a href="https://l.instagram.com/?u=http%3A%2F%2Ftinyurl.com%2Ftf0jq6ou%2F&e=ATOBV2Y0pJ395F_t3gt4lF0xkqbev136H3N6NgAuvcVGKy4WXDrpMdgNbfT_0vdEq0qmpXApiZf6xTodixbg9FpKpXHosEaL79QXOg&s=1" target="_blank" rel="noopener noreferrer">
+                  <WhatsApp fontSize='large'/>
+                </a>
+              </Typography>
+            </MuiThemeProvider>
+
           </Box>
 
-          <Box className={classes.footer}>
-            
+          <Box display='flex' flexDirection='column' alignItems='center' marginTop='4em' marginBottom='4em'>
+            <MuiThemeProvider theme={theme}>
+              <Typography variant='h2'>
+                Siga Nossas Redes
+              </Typography>
+              <a href='https://www.instagram.com/toledobjjacademy/' target="_blank" rel="noopener noreferrer">
+                <Instagram fontSize='large'/>
+              </a>
+            </MuiThemeProvider>
           </Box>
-
-          <AppBar color="primary" className={classes.footer}>
-            
-
-            <h4>TOLEDO BJJ ACADEMY! </h4>
-          </AppBar>
-
+        
         </Box>
+
+        <AppBar color="primary" className={classes.footer}>
+            <h4>TOLEDO BJJ ACADEMY</h4>
+        </AppBar>
 
       </Box>
 
