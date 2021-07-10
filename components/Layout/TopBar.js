@@ -37,6 +37,8 @@ const useStyles = makeStyles((theme) => ({
     menuItems:{
         padding:'2px 4px',
         display: 'flex',
+        flexDirection: 'row',
+        justifyContent:'center',
         alignItems: 'center',
         height: 30,
         width: 500,
@@ -56,93 +58,61 @@ function TopBar () {
     return(
     
     <>
-        <AppBar className={classes.root} color="default">
+      <AppBar className={classes.root} color="default">
 
-            <Toolbar className={classes.toolbar}>
+        <Toolbar className={classes.toolbar}>
 
-                <Hidden mdUp>
+          <Hidden mdUp>
 
-                    <Box alignItems='center'>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            onClick={toogleDrawer(true)}
-                            edge="start"
-                            
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                    </Box>
+            <Box alignItems='center'>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={toogleDrawer(true)}
+                edge="start"
+                  
+              >
+                <MenuIcon />
+              </IconButton>
+            </Box>
 
-                    <Box alignItems='center'>
-                        <Link href='/'>
-                            <img src="/img/TopBar_LogoSM.png" alt="Logo" className={classes.logo}/>
-                        </Link>
-                    </Box>
+            <Box alignItems='center'>
+              <Link href='/'>
+                <img src="/img/TopBar_LogoSM.png" alt="Logo" className={classes.logo}/>
+              </Link>
+            </Box>
 
-                    <Box alignItems='center'>
-                        <AccountCircle/>
-                    </Box>
-                    
-                </Hidden>
+            <Box alignItems='center'>
+              <AccountCircle/>
+            </Box>
+              
+          </Hidden>
 
-                <Hidden smDown>
+          <Hidden smDown>
 
-                    <Box alignItems='center'>
-                        <Link href='/'>
-                            <img src="/img/TopBar_Logo.png" alt="Logo" className={classes.logo}/>
-                        </Link>
-                    </Box>
+            <Box alignItems='center'>
+              <Link href='/'>
+                <img src="/img/TopBar_Logo.png" alt="Logo" className={classes.logo}/>
+              </Link>
+            </Box>
 
-                    <Box className={classes.menuItems}>
-                        <Link href='/Membros'>
-                            <Button color="inherit">Membros</Button>
-                        </Link>
+            <Box className={classes.menuItems}>
+              
+              <Link href='/'>
+                <Button color="inherit">HOME</Button>
+              </Link>
 
-                        <Link href='/Sobre'>
-                            <Button color="inherit">Sobre</Button>
-                        </Link>
+            </Box>
 
-                        <Link href='/Loja'>
-                            <Button color="inherit">Loja</Button>
-                        </Link>
-                    </Box>
+            <Box width={'326px'} display='flex' justifyContent='flex-end'>
+              <Button color="inherit" startIcon={<AccountCircle/>}>Entrar</Button>
+            </Box>
 
-                    <Box>
-                        <Button color="inherit" startIcon={<AccountCircle/>}>Entrar</Button>
-                    </Box>
+          </Hidden>
 
-                </Hidden>
+        </Toolbar>
 
-            </Toolbar>
-
-        </AppBar>
-
-        <SwipeableDrawer
-            anchor="top"
-            open={state}
-            onClose={toogleDrawer(false)}
-        >
-
-            <List>
-                <ListItem button key='Membros'>
-                    <Link href="/Membros" passHref>
-                        <ListItemText primary='Membros' />
-                    </Link>
-                </ListItem>
-                <ListItem button key='Sobre'>
-                    <Link href="/Sobre" passHref>
-                        <ListItemText primary='Sobre' />
-                    </Link>
-                </ListItem>
-                <ListItem button key='Loja'>
-                    <Link href="/Loja" passHref>
-                        <ListItemText primary='Loja' />
-                    </Link>
-                </ListItem>
-            </List>
-
-        </SwipeableDrawer>
+      </AppBar>
     
     </>
     );

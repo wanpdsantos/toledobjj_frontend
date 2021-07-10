@@ -1,16 +1,20 @@
 import { createMuiTheme, makeStyles, MuiThemeProvider, responsiveFontSizes } from  '@material-ui/core';
 import Layout from '../components/Layout';
-import Box from '@material-ui/core/Box';
+import {Box, IconButton} from '@material-ui/core';
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import AvTimer from '@material-ui/icons/AvTimer';
 import LocationOnOutlined from '@material-ui/icons/LocationOnOutlined';
-import WhatsApp from '@material-ui/icons/WhatsApp';
-import Instagram from '@material-ui/icons/Instagram';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import YoutubeIcon from '@material-ui/icons/YouTube';
+import CopyRightIcon from '@material-ui/icons/Copyright';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography'
+import { green, common, red } from '@material-ui/core/colors';
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -40,10 +44,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     height: '15em',
-    width:'15em',
+    width:'25em',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop:'1em',
+    backgroundImage: `url(${"/img/background.jpg"})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
   },
   boxEndereco: {
     display: 'flex',
@@ -62,10 +70,40 @@ const useStyles = makeStyles((theme) => ({
     top: 'auto',
     bottom: 0,
   },
+  BoxVenhaFazerParte: {
+    backgroundImage: `url(${"/img/background.jpg"})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    
+  }
 
 }));
 
-let theme = createMuiTheme();
+let theme = createMuiTheme({ 
+
+  palette: {
+    text: {
+      primary: "#FFFFFF"
+    }
+  },
+  typography: {
+    fontFamily: [
+      'Staatliches',
+      'cursive',
+    ].join(','),
+    h4: {
+      fontSize: 37,
+      letterSpacing: "0.08em",
+    },
+    h5: {
+
+      letterSpacing: "0.08em",
+    }
+
+  },
+
+});
 theme = responsiveFontSizes(theme);
 
 function Home() {
@@ -105,49 +143,97 @@ function Home() {
 
         </Box>
 
-        <Box marginTop='2em' className={classes.boxSessions}>
+        <Box className={classes.boxSessions}>
+          
+          <Box display='flex' flexDirection='column' width='100%' justifyContent='center' alignItems='center' height='30em' className={classes.BoxVenhaFazerParte}>
+            <Box display='flex' alignItems='center'>
+              <IconButton
+                style={{ color: common.white }}
+                aria-label="agendar aula"
+                edge="start"
+              >
+                <AvTimer style={{ fontSize: 70 }}/>
+              </IconButton>
+              <MuiThemeProvider theme={theme}>
+                <Typography variant='h3' align='center' color='textPrimary'>
+                  Horário das Aulas
+                </Typography>
+              </MuiThemeProvider>
+            
+            </Box>
 
-          <Box display='flex' alignItems='center'>
-            <AvTimer/>
-            <h1>Horário das Aulas</h1>
+            <Box width='90%'>
+              <Grid container   
+                direction="row"
+                justify="space-evenly"
+                alignItems="center">
+
+                <Grid key={1} item>
+                  <Paper className={classes.paperGrid}>
+                    <MuiThemeProvider theme={theme}>
+                      <Typography variant='h5' align='center' color='textPrimary'>
+                        Segunda
+                      </Typography>
+                    </MuiThemeProvider>
+                    <MuiThemeProvider theme={theme}>
+                      <Typography variant='h6' align='center' color='textPrimary'>
+                        BJJ: 20h - 22h - Pedro Toledo
+                      </Typography>
+                    </MuiThemeProvider>
+                  </Paper>
+                </Grid>
+
+                <Grid key={2} item>
+                  <Paper className={classes.paperGrid}>
+                    <MuiThemeProvider theme={theme}>
+                      <Typography variant='h5' align='center' color='textPrimary'>
+                        Quarta
+                      </Typography>
+                    </MuiThemeProvider>
+                    <MuiThemeProvider theme={theme}>
+                      <Typography variant='h6' align='center' color='textPrimary'>
+                        BJJ: 20h - 22h - Pedro Toledo
+                      </Typography>
+                    </MuiThemeProvider>
+                  </Paper>
+                </Grid>
+
+                <Grid key={3} item>
+                  <Paper className={classes.paperGrid}>
+                    <MuiThemeProvider theme={theme}>
+                      <Typography variant='h5' align='center' color='textPrimary'>
+                        Sexta
+                      </Typography>
+                    </MuiThemeProvider>
+                    <MuiThemeProvider theme={theme}>
+                      <Typography variant='h6' align='center' color='textPrimary'>
+                        BJJ: 20h - 22h - Pedro Toledo
+                      </Typography>
+                    </MuiThemeProvider>
+                  </Paper>
+                </Grid>
+              </Grid>
+            </Box>
           </Box>
 
-          <Box width='90%'>
-            <Grid container   
-              direction="row"
-              justify="space-evenly"
-              alignItems="center">
-
-              <Grid key={1} item>
-                <Paper className={classes.paperGrid}>
-                  <h3>Segunda</h3>
-                  <h4>BJJ: 20h - 22h - Pedro Toledo</h4>
-                </Paper>
-              </Grid>
-
-              <Grid key={2} item>
-                <Paper className={classes.paperGrid}>
-                  <h3>Quarta</h3>
-                  <h4>BJJ: 20h - 22h - Pedro Toledo</h4>
-                </Paper>
-              </Grid>
-
-              <Grid key={3} item>
-                <Paper className={classes.paperGrid}>
-                  <h3>Sexta</h3>
-                  <h4>BJJ: 20h - 22h - Pedro Toledo</h4>
-                </Paper>
-              </Grid>
-            </Grid>
-          </Box>
 
         </Box>
 
         <Box marginTop='4em' className={classes.boxSessions}>
 
           <Box display='flex' alignItems='center'>
-            <LocationOnOutlined/>
-            <h1>Localização</h1>
+            <IconButton
+              aria-label="agendar aula"
+              edge="start"
+            >
+              <LocationOnOutlined style={{ fontSize: 70 }}/>
+            </IconButton>
+
+            <MuiThemeProvider theme={theme}>
+              <Typography variant='h3' align='center'>
+                Localização
+              </Typography>
+            </MuiThemeProvider>
           </Box>
 
           <Box className={classes.boxEndereco}>
@@ -158,10 +244,33 @@ function Home() {
 
               <Grid key={1} item>
                 <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
-                  <h3>Rua Inhambupe</h3>
-                  <h3>Resgate</h3>
-                  <h3>Salvador/BA</h3>
-                  <h5>Como Chegar? Virar a primeira direita após Academia SmartFit da Rua Silveira Martins.</h5>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h5' align='center'>
+                      Rua Inhambupe
+                    </Typography>
+                  </MuiThemeProvider>
+
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h5' align='center'>
+                      Bairro: Resgate
+                    </Typography>
+                  </MuiThemeProvider>
+
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h5' align='center'>
+                      Salvador/BA
+                    </Typography>
+                  </MuiThemeProvider>
+
+                  <Box marginTop='2em'>
+                    <MuiThemeProvider theme={theme}>
+                      <Typography variant='h5' align='center'>
+                      Como Chegar? Virar a primeira direita após Academia SmartFit da Rua Silveira Martins.
+                      </Typography>
+                    </MuiThemeProvider>
+                  </Box>
+
+
                 </Box>
               </Grid>
 
@@ -176,45 +285,79 @@ function Home() {
           </Box>
         </Box>
 
-        <Box marginTop='4em' className={classes.boxSessions} width='100%' paddingLeft='5em' paddingRight='5em'>
+        <Box marginTop='4em' className={classes.boxSessions} width='100%' >
+          
+          <Box display='flex' flexDirection='column' width='100%' justifyContent='center' alignItems='center' height='30em' className={classes.BoxVenhaFazerParte}>
 
-          <Box display='flex' alignItems='center'>
-            <MuiThemeProvider theme={theme}>
-              <Typography variant='h1'>
-                Venha fazer parte da Equipe!
-                <img src="/img/home/HOME_PunchIcon.jpg" height='50em' alt="Punch"/>
-              </Typography>
-            </MuiThemeProvider>
+            <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' marginBottom='2em' paddingLeft='3em' paddingRight='3em'>
+              <MuiThemeProvider theme={theme}>
+                <Typography variant='h4' align='center' color='textPrimary' >
+                  Venha fazer parte da Equipe Toledo BJJ !!!
+                </Typography>
+              </MuiThemeProvider>
+
+              <img src="/img/home/HOME_PunchIcon.png" height='100em' alt="Punch"/>
+            </Box>
+            
+            
+            <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' marginTop='2em'paddingLeft='3em' paddingRight='3em'>
+              <MuiThemeProvider theme={theme}>
+                <Typography variant='h4' align='center' color='textPrimary'>
+                  Agende uma Aula Experimental pelo nosso WhatsApp!
+                  
+                </Typography>
+              </MuiThemeProvider>
+
+              <IconButton
+                style={{ color: green[500] }}
+                aria-label="agendar aula"
+                edge="start"
+                href={'http://tinyurl.com/tf0jq6ou/'}
+              >
+                <WhatsAppIcon style={{ fontSize: 70 }}/>
+
+              </IconButton>
+              
+            </Box>
+
 
           </Box>
 
-          <Box display='flex' alignItems='center'>
-            <MuiThemeProvider theme={theme}>
-              <Typography variant='subtitle1'>
-                Agende uma Aula Experimental!
-                <a href="https://l.instagram.com/?u=http%3A%2F%2Ftinyurl.com%2Ftf0jq6ou%2F&e=ATOBV2Y0pJ395F_t3gt4lF0xkqbev136H3N6NgAuvcVGKy4WXDrpMdgNbfT_0vdEq0qmpXApiZf6xTodixbg9FpKpXHosEaL79QXOg&s=1" target="_blank" rel="noopener noreferrer">
-                  <WhatsApp fontSize='large'/>
-                </a>
-              </Typography>
-            </MuiThemeProvider>
 
-          </Box>
-
-          <Box display='flex' flexDirection='column' alignItems='center' marginTop='4em' marginBottom='4em'>
+          <Box display='flex' flexDirection='column' height='30em' justifyContent='center' alignItems='center'>
             <MuiThemeProvider theme={theme}>
-              <Typography variant='h2'>
+              <Typography variant='h3'>
                 Siga Nossas Redes
               </Typography>
-              <a href='https://www.instagram.com/toledobjjacademy/' target="_blank" rel="noopener noreferrer">
-                <Instagram fontSize='large'/>
-              </a>
             </MuiThemeProvider>
+            
+            <Box display='flex' flexDirection='row' justifyContent='center' alignItems='center'>
+
+              <IconButton
+                aria-label="Instagram-Link"
+                edge="start"
+                href={'https://www.instagram.com/toledobjjacademy/'}
+              >
+                <InstagramIcon style={{ fontSize: 70 }}/>
+              </IconButton>
+
+              <IconButton
+                style={{ color: red[500] }}
+                aria-label="Youtube-Link"
+                edge="start"
+                href={'https://www.youtube.com/channel/UCrf9r_--4MHHMCwuNsppXNg'}
+              >
+                <YoutubeIcon style={{ fontSize: 70 }}/>
+              </IconButton>
+
+            </Box>
+
           </Box>
         
         </Box>
 
         <AppBar color="primary" className={classes.footer}>
-            <h4>TOLEDO BJJ ACADEMY</h4>
+          <h4>TOLEDO BJJ ACADEMY © TODOS OS DIREITOS RESERVADOS</h4>
         </AppBar>
 
       </Box>
