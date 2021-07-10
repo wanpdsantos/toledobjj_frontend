@@ -1,6 +1,6 @@
-import { makeStyles } from  '@material-ui/core'
-import Head from 'next/head'
-import TopBar from './TopBar'
+import { makeStyles } from  '@material-ui/core';
+import Head from 'next/head';
+import TopBar from '../../components/Layout/TopBar';
 
 const useStyles = makeStyles((theme) => ({
 

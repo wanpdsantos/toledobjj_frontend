@@ -10,7 +10,6 @@ import LocationOnOutlined from '@material-ui/icons/LocationOnOutlined';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YoutubeIcon from '@material-ui/icons/YouTube';
-import CopyRightIcon from '@material-ui/icons/Copyright';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography'
 import { green, common, red } from '@material-ui/core/colors';
@@ -104,9 +103,10 @@ let theme = createMuiTheme({
   },
 
 });
+
 theme = responsiveFontSizes(theme);
 
-function Home() {
+function Home(props) {
 
   const classes = useStyles();
 
@@ -369,5 +369,19 @@ function Home() {
     </Layout>
   )
 };
+
+export async function getStaticProps(context) {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+
+    },
+  }
+}
+
 
 export default Home;
