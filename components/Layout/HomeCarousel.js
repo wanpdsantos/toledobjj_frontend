@@ -13,22 +13,22 @@ const useStyles = makeStyles((theme) => ({
 
 function HomeCarousel(items){
 
-    return (
-        <Carousel>
-            {
-                items.map( (thumb, title) => <Item thumb={thumb} title={title} /> )
-            }
-        </Carousel>
-    )
+  return (
+    <Carousel>
+      {
+        items.map( (thumb, title,index) => <Item key={index} thumb={thumb} title={title} /> )
+      }
+    </Carousel>
+  )
 }
 
 function Item(props) {
     
     const classes = useStyles();
     return (
-        <Paper className = {classes.paperCarousel}>
-            <img src={props.items.thumb} alt={props.items.title}/>
-        </Paper>
+      <Paper className = {classes.paperCarousel}>
+        <img src={props.items.thumb} alt={props.items.title}/>
+      </Paper>
     )
 }
 

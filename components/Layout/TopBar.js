@@ -88,7 +88,7 @@ function TopBar () {
           <Toolbar className={classes.toolbarSM}>
             <Box display='flex' flexDirection='row' justifyContent='center' alignItems='center'>
               <Link href='/'>
-                <img src="/img/TopBar_LogoSM.png" alt="Logo" className={classes.logo}/>
+                <img src="/img/TopBar_LogoSM.webp" alt="Logo" className={classes.logo}/>
               </Link>
             </Box>
           </Toolbar>
@@ -99,7 +99,7 @@ function TopBar () {
           <Toolbar className={classes.toolbar}>
             <Box alignItems='center'>
               <Link href='/'>
-                <img src="/img/TopBar_Logo.png" alt="Logo" className={classes.logo}/>
+                <img src="/img/TopBar_Logo.webp" alt="Logo" className={classes.logo}/>
               </Link>
             </Box>
 

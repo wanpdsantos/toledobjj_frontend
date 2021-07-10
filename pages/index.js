@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop:'1em',
-    backgroundImage: `url(${"/img/background.jpg"})`,
+    backgroundImage: `url(${"/img/background.webp"})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
   },
   BoxVenhaFazerParte: {
-    backgroundImage: `url(${"/img/background.jpg"})`,
+    backgroundImage: `url(${"/img/background.webp"})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
@@ -112,15 +112,15 @@ function Home(props) {
 
   const carouselItems = [
     {
-      thumb: "/img/home/HOME_Carousel_1.jpg",
+      thumb: "/img/home/HOME_Carousel_1.webp",
       title: "Training 1",
     },
     {
-      thumb: "/img/home/HOME_Carousel_2.jpg",
+      thumb: "/img/home/HOME_Carousel_2.webp",
       title: "Training 1",
     },
     {
-      thumb: "/img/home/HOME_Carousel_3.jpg",
+      thumb: "/img/home/HOME_Carousel_3.webp",
       title: "Training 1",
     },
 
@@ -276,7 +276,7 @@ function Home(props) {
 
               <Grid key={2} item>
                 <Box>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.166029958064!2d-38.466977684564974!3d-12.961225563114171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161ac2ba457403%3A0x6bc6be9da33acefa!2sR.%20Inhambupe%20-%20Resgate%2C%20Salvador%20-%20BA%2C%2040301-110!5e0!3m2!1spt-BR!2sbr!4v1615851105943!5m2!1spt-BR!2sbr" width="400" height="300"></iframe>
+                  <iframe async defer src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.166029958064!2d-38.466977684564974!3d-12.961225563114171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161ac2ba457403%3A0x6bc6be9da33acefa!2sR.%20Inhambupe%20-%20Resgate%2C%20Salvador%20-%20BA%2C%2040301-110!5e0!3m2!1spt-BR!2sbr!4v1615851105943!5m2!1spt-BR!2sbr" width="400" height="300"></iframe>
                 </Box>
               </Grid>
 
