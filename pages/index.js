@@ -357,7 +357,11 @@ function Home() {
         </Box>
 
         <AppBar color="primary" className={classes.footer}>
-          <h4>TOLEDO BJJ ACADEMY © TODOS OS DIREITOS RESERVADOS</h4>
+          <MuiThemeProvider theme={theme}>
+            <Typography variant='h6'>
+            TOLEDO BJJ ACADEMY © TODOS OS DIREITOS RESERVADOS
+            </Typography>
+          </MuiThemeProvider>
         </AppBar>
 
       </Box>
