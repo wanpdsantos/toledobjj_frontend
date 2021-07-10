@@ -132,7 +132,7 @@ function Home() {
       
       <Box flexDirection='row' >
 
-        <Box >
+        <Box display='flex'>
           <Carousel>
             {carouselItems.map((item) => (
                 <Paper className={classes.paperCarousel}>
@@ -142,82 +142,82 @@ function Home() {
           </Carousel>
 
         </Box>
-
-        <Box className={classes.boxSessions}>
           
-          <Box display='flex' flexDirection='column' width='100%' justifyContent='center' alignItems='center' height='30em' className={classes.BoxVenhaFazerParte}>
-            <Box display='flex' alignItems='center'>
-              <IconButton
-                style={{ color: common.white }}
-                aria-label="agendar aula"
-                edge="start"
-              >
-                <AvTimer style={{ fontSize: 70 }}/>
-              </IconButton>
-              <MuiThemeProvider theme={theme}>
-                <Typography variant='h3' align='center' color='textPrimary'>
-                  Horário das Aulas
-                </Typography>
-              </MuiThemeProvider>
-            
-            </Box>
-
-            <Box width='90%'>
-              <Grid container   
-                direction="row"
-                justify="space-evenly"
-                alignItems="center">
-
-                <Grid key={1} item>
-                  <Paper className={classes.paperGrid}>
-                    <MuiThemeProvider theme={theme}>
-                      <Typography variant='h5' align='center' color='textPrimary'>
-                        Segunda
-                      </Typography>
-                    </MuiThemeProvider>
-                    <MuiThemeProvider theme={theme}>
-                      <Typography variant='h6' align='center' color='textPrimary'>
-                        BJJ: 20h - 22h - Pedro Toledo
-                      </Typography>
-                    </MuiThemeProvider>
-                  </Paper>
-                </Grid>
-
-                <Grid key={2} item>
-                  <Paper className={classes.paperGrid}>
-                    <MuiThemeProvider theme={theme}>
-                      <Typography variant='h5' align='center' color='textPrimary'>
-                        Quarta
-                      </Typography>
-                    </MuiThemeProvider>
-                    <MuiThemeProvider theme={theme}>
-                      <Typography variant='h6' align='center' color='textPrimary'>
-                        BJJ: 20h - 22h - Pedro Toledo
-                      </Typography>
-                    </MuiThemeProvider>
-                  </Paper>
-                </Grid>
-
-                <Grid key={3} item>
-                  <Paper className={classes.paperGrid}>
-                    <MuiThemeProvider theme={theme}>
-                      <Typography variant='h5' align='center' color='textPrimary'>
-                        Sexta
-                      </Typography>
-                    </MuiThemeProvider>
-                    <MuiThemeProvider theme={theme}>
-                      <Typography variant='h6' align='center' color='textPrimary'>
-                        BJJ: 20h - 22h - Pedro Toledo
-                      </Typography>
-                    </MuiThemeProvider>
-                  </Paper>
-                </Grid>
-              </Grid>
-            </Box>
+        <Box display='flex' flexDirection='column' width='100%' justifyContent='center' alignItems='center' minHeight='30em' className={classes.BoxVenhaFazerParte}>
+          
+          <Box display='flex' alignItems='center'>
+            <IconButton
+              style={{ color: common.white }}
+              aria-label="agendar aula"
+              edge="start"
+            >
+              <AvTimer style={{ fontSize: 70 }}/>
+            </IconButton>
+            <MuiThemeProvider theme={theme}>
+              <Typography variant='h3' align='center' color='textPrimary'>
+                Horário das Aulas
+              </Typography>
+            </MuiThemeProvider>
+          
           </Box>
 
+          <Box width='90%'>
+            <Grid container   
+              direction="row"
+              justify="space-evenly"
+              alignItems="center">
+
+              <Grid key={1} item>
+                <Paper className={classes.paperGrid}>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h5' align='center' color='textPrimary'>
+                      Segunda
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ: 20h - 22h - Pedro Toledo
+                    </Typography>
+                  </MuiThemeProvider>
+                </Paper>
+              </Grid>
+
+              <Grid key={2} item>
+                <Paper className={classes.paperGrid}>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h5' align='center' color='textPrimary'>
+                      Quarta
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ: 20h - 22h - Pedro Toledo
+                    </Typography>
+                  </MuiThemeProvider>
+                </Paper>
+              </Grid>
+
+              <Grid key={3} item>
+                <Paper className={classes.paperGrid}>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h5' align='center' color='textPrimary'>
+                      Sexta
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ: 20h - 22h - Pedro Toledo
+                    </Typography>
+                  </MuiThemeProvider>
+                </Paper>
+              </Grid>
+            </Grid>
+          </Box>
 
         </Box>
+
+
+   
 
         <Box marginTop='4em' className={classes.boxSessions}>
 
