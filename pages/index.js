@@ -176,7 +176,7 @@ function Home(props) {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ: 20h - 22h - Pedro Toledo
+                      BJJ: 19h - 21h - Pedro Toledo
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
@@ -191,7 +191,7 @@ function Home(props) {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ: 20h - 22h - Pedro Toledo
+                      BJJ: 19h - 21h - Pedro Toledo
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
@@ -206,7 +206,7 @@ function Home(props) {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ: 20h - 22h - Pedro Toledo
+                      BJJ: 19h - 21h - Pedro Toledo
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
