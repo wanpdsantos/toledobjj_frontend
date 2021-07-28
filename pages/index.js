@@ -181,7 +181,7 @@ function Home(props) {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Avançado: 19h - 21h - Pedro Toledo
+                      BJJ Avançado: 20h - 21h - Pedro Toledo
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
@@ -201,7 +201,7 @@ function Home(props) {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Avançado: 19h - 21h - Pedro Toledo
+                      BJJ Avançado: 20h - 21h - Pedro Toledo
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
@@ -221,7 +221,7 @@ function Home(props) {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Avançado: 19h - 21h - Pedro Toledo
+                      BJJ Avançado: 20h - 21h - Pedro Toledo
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
