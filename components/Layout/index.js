@@ -54,7 +54,7 @@ function Layout({children , title}){
             <div className={classes.wrapper}>
                 <div className={classes.contentContainer}>
                     <div className={classes.content}>
-                        {children}
+                      {children}
                     </div>
                 </div>
             </div>
