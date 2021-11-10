@@ -321,7 +321,7 @@ const Home = (props) => {
               </IconButton>
             </Box>
           </Box>
-          
+
           <Box display='flex' flexDirection='column' height='30em' justifyContent='center' alignItems='center'>
             <MuiThemeProvider theme={theme}>
               <Typography variant='h3'>
@@ -333,7 +333,7 @@ const Home = (props) => {
               <IconButton
                 aria-label="Instagram-Link"
                 edge="start"
-                href={'https://www.instagram.com/toledobjjacademy/'}
+                href={'https://www.instagram.com/toledojiujitsu/'}
               >
                 <InstagramIcon style={{ fontSize: 70 }}/>
               </IconButton>

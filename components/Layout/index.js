@@ -3,65 +3,57 @@ import Head from 'next/head';
 import TopBar from '../../components/Layout/TopBar';
 
 const useStyles = makeStyles((theme) => ({
-
-    root: {
-        backgroundColor: theme.palette.background.dark,
-        display: 'flex',
-        height: '100vh',
-        overflow: 'hidden',
-        width: '100vw',
+  root: {
+    backgroundColor: theme.palette.background.dark,
+    display: 'flex',
+    height: '100vh',
+    overflow: 'hidden',
+    width: '100vw',
+  },
+  wrapper:{
+    display: 'flex',
+    flex: '1 1 auto',
+    overflow: 'hidden',
+    paddingTop: '7em',
+    [theme.breakpoints.up('lg')]:{
+      paddingLeft: 0,
     },
-    wrapper:{
-        display: 'flex',
-        flex: '1 1 auto',
-        overflow: 'hidden',
-        paddingTop: '7em',
-        [theme.breakpoints.up('lg')]:{
-            paddingLeft: 0,
-        },
-    },
-    contentContainer:{
-        display: 'flex',
-        flex: '1 1 auto',
-        overflow: 'hidden',
-    },
-    content:{
-        display: 'flex',
-        justifyContent: 'center',
-        width: '100%',
-        overflowY: 'scroll',
-        overflowX: 'hidden',
-    },
-
+  },
+  contentContainer:{
+    display: 'flex',
+    flex: '1 1 auto',
+    overflow: 'hidden',
+  },
+  content:{
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    overflowY: 'scroll',
+    overflowX: 'hidden',
+  },
 }));
 
-function Layout({children , title}){
-
-    const classes = useStyles();
-
-    return(
+const Layout = ({children , title}) => {
+  const classes = useStyles();
+  return(
     <>
-        <Head>
-            <title>{title}</title>
-            <meta charSet="utf-8"/>
-            <meta name="viewport" content='initial-scale=1.0,width=device-width'/>
-        </Head>
-
-        <div className={classes.root}>
-
-            <TopBar/>
-
-            <div className={classes.wrapper}>
-                <div className={classes.contentContainer}>
-                    <div className={classes.content}>
-                      {children}
-                    </div>
-                </div>
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8"/>
+        <meta name="viewport" content='initial-scale=1.0,width=device-width'/>
+      </Head>
+      <div className={classes.root}>
+        <TopBar/>
+        <div className={classes.wrapper}>
+          <div className={classes.contentContainer}>
+            <div className={classes.content}>
+              {children}
             </div>
+          </div>
         </div>
-
+      </div>
     </>
-    );
+  );
 }
 
 export default Layout;

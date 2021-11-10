@@ -1,8 +1,7 @@
-import { Box, Paper, makeStyles, ListItemSecondaryAction } from '@material-ui/core';
+import { Paper, makeStyles } from '@material-ui/core';
 import Carousel from 'react-material-ui-carousel';
 
 const useStyles = makeStyles((theme) => ({
-
   paperCarousel: {
     display: 'flex',
     justifyContent: 'center',
@@ -11,8 +10,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-function HomeCarousel(items){
-
+const HomeCarousel = (items) => {
   return (
     <Carousel>
       {
@@ -22,14 +20,13 @@ function HomeCarousel(items){
   )
 }
 
-function Item(props) {
-    
-    const classes = useStyles();
-    return (
-      <Paper className = {classes.paperCarousel}>
-        <img src={props.items.thumb} alt={props.items.title}/>
-      </Paper>
-    )
+const Item = (props) => {
+  const classes = useStyles();
+  return (
+    <Paper className = {classes.paperCarousel}>
+      <img src={props.items.thumb} alt={props.items.title}/>
+    </Paper>
+  );
 }
 
 export default HomeCarousel;
