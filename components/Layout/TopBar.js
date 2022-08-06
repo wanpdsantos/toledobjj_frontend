@@ -1,8 +1,6 @@
-import React from 'react';
-import { createMuiTheme, makeStyles, MuiThemeProvider, responsiveFontSizes } from  '@material-ui/core';
-import {Box, Toolbar, IconButton, Button, Hidden, Typography, AppBar } from '@material-ui/core';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import { AppBar, Box, Button, createMuiTheme, Hidden, makeStyles, MuiThemeProvider, responsiveFontSizes, Toolbar, Typography } from '@material-ui/core';
 import Link from 'next/link';
+import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -10,13 +8,13 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.drawer + 1,
     backgroundColor: theme.palette.background.default,
   },
-  toolbar:{
+  toolbar: {
     minHeight: '7em',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  toolbarSM:{
+  toolbarSM: {
     minHeight: '7em',
     display: 'flex',
     alignItems: 'center',
@@ -26,20 +24,20 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
     height: '5em',
     marginLeft: theme.spacing(3),
-      
+
   },
-  menuItems:{
-    padding:'2px 4px',
+  menuItems: {
+    padding: '2px 4px',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent:'center',
+    justifyContent: 'center',
     alignItems: 'center',
     height: 30,
     width: 500,
   },
 }));
 
-let theme = createMuiTheme({ 
+let theme = createMuiTheme({
   palette: {
     text: {
       primary: "#FFFFFF"
@@ -65,16 +63,16 @@ theme = responsiveFontSizes(theme);
 const TopBar = () => {
   const classes = useStyles();
   const [state, setState] = React.useState(false);
-  const toogleDrawer = (open) => (event ) => {
+  const toogleDrawer = (open) => (event) => {
     setState(open);
   };
-  return(
+  return (
     <AppBar className={classes.root} color="default">
       <Hidden mdUp>
         <Toolbar className={classes.toolbarSM}>
           <Box display='flex' flexDirection='row' justifyContent='center' alignItems='center'>
             <Link href='/'>
-              <img src="/img/TopBar_LogoSM.webp" alt="Logo" className={classes.logo}/>
+              <img src="/img/TopBar_LogoSM.webp" alt="Logo" className={classes.logo} />
             </Link>
           </Box>
         </Toolbar>
@@ -84,7 +82,7 @@ const TopBar = () => {
         <Toolbar className={classes.toolbar}>
           <Box alignItems='center'>
             <Link href='/'>
-              <img src="/img/TopBar_Logo.webp" alt="Logo" className={classes.logo}/>
+              <img src="/img/TopBar_LogoSM.webp" alt="Logo" className={classes.logo} />
             </Link>
           </Box>
 
@@ -92,22 +90,15 @@ const TopBar = () => {
             <Link href='/'>
               <Button color="inherit">
                 <MuiThemeProvider theme={theme}>
-                  <Typography variant='h6' align='center'>
-                    HOME
+                  <Typography variant='h4' align='center'>
+                    TOLEDO JIU JITSU
                   </Typography>
                 </MuiThemeProvider>
               </Button>
             </Link>
           </Box>
 
-          <Box width={'326px'} display='flex' justifyContent='flex-end'>
-            <Button color="inherit" startIcon={<AccountCircle/>}>
-              <MuiThemeProvider theme={theme}>
-                <Typography variant='h6' align='center'>
-                Entrar
-                </Typography>
-              </MuiThemeProvider>
-            </Button>
+          <Box display='flex' justifyContent='flex-end'>
           </Box>
         </Toolbar>
       </Hidden>

@@ -1,18 +1,17 @@
-import { createMuiTheme, makeStyles, MuiThemeProvider, responsiveFontSizes } from  '@material-ui/core';
-import Layout from '../components/Layout';
-import {Box, IconButton} from '@material-ui/core';
-import React from 'react';
-import Carousel from 'react-material-ui-carousel';
-import Paper from '@material-ui/core/Paper';
+import { Box, createMuiTheme, IconButton, makeStyles, MuiThemeProvider, responsiveFontSizes } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import { common, green, red } from '@material-ui/core/colors';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 import AvTimer from '@material-ui/icons/AvTimer';
+import InstagramIcon from '@material-ui/icons/Instagram';
 import LocationOnOutlined from '@material-ui/icons/LocationOnOutlined';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import InstagramIcon from '@material-ui/icons/Instagram';
 import YoutubeIcon from '@material-ui/icons/YouTube';
-import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography'
-import { green, common, red } from '@material-ui/core/colors';
+import React from 'react';
+import Carousel from 'react-material-ui-carousel';
+import Layout from '../components/Layout';
 
 const useStyles = makeStyles((theme) => ({
   boxUnderDevelopment: {
@@ -34,16 +33,16 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: "center",
-    
+
   },
   paperGrid: {
     display: 'flex',
     flexDirection: 'column',
     height: '15em',
-    width:'25em',
+    width: '25em',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop:'1em',
+    marginTop: '1em',
     backgroundImage: `url(${"/img/background.webp"})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -58,11 +57,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.3em',
   },
   footer: {
-    display:'flex',
-    alignItems:'center',
-    justifyContent:'center',
-    minHeight:'8em',
-    position:'relative',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '8em',
+    position: 'relative',
     top: 'auto',
     bottom: 0,
   },
@@ -74,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-let theme = createMuiTheme({ 
+let theme = createMuiTheme({
   palette: {
     text: {
       primary: "#FFFFFF"
@@ -106,11 +105,15 @@ const Home = (props) => {
     },
     {
       thumb: "/img/home/HOME_Carousel_2.webp",
-      title: "Training 1",
+      title: "Training 2",
     },
     {
       thumb: "/img/home/HOME_Carousel_3.webp",
-      title: "Training 1",
+      title: "Training 3",
+    },
+    {
+      thumb: "/img/home/HOME_Carousel_4.webp",
+      title: "Training 4",
     },
   ];
 
@@ -120,21 +123,21 @@ const Home = (props) => {
         <Box display='flex'>
           <Carousel>
             {carouselItems.map((item) => (
-                <Paper className={classes.paperCarousel}>
-                  <img src={item.thumb} alt={item.title} className={classes.imgCarousel} />
-                </Paper>
+              <Paper className={classes.paperCarousel}>
+                <img src={item.thumb} alt={item.title} className={classes.imgCarousel} />
+              </Paper>
             ))}
           </Carousel>
         </Box>
-          
-        <Box display='flex' flexDirection='column' width='100%' justifyContent='center' alignItems='center' minHeight='30em' className={classes.BoxVenhaFazerParte}>
+
+        <Box display='flex' flexDirection='column' width='100%' justifyContent='center' alignItems='center' minHeight='35em' className={classes.BoxVenhaFazerParte}>
           <Box display='flex' alignItems='center'>
             <IconButton
               style={{ color: common.white }}
               aria-label="agendar aula"
               edge="start"
             >
-              <AvTimer style={{ fontSize: 70 }}/>
+              <AvTimer style={{ fontSize: 70 }} />
             </IconButton>
             <MuiThemeProvider theme={theme}>
               <Typography variant='h3' align='center' color='textPrimary'>
@@ -144,7 +147,7 @@ const Home = (props) => {
           </Box>
 
           <Box width='90%'>
-            <Grid container   
+            <Grid container
               direction="row"
               justify="space-evenly"
               alignItems="center">
@@ -158,7 +161,32 @@ const Home = (props) => {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Mista: 06h - 07h - Pedro Toledo
+                      BJJ Mista: 08h - 09h - Pedro Toledo
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Kids: 17h - 18h - Pedro Toledo
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Iniciante: 19h - 20h - Pedro Toledo
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Avançado: 20h - 21h - Pedro Toledo
+                    </Typography>
+                  </MuiThemeProvider>
+                </Paper>
+              </Grid>
+
+              <Grid key={1} item>
+                <Paper className={classes.paperGrid}>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h5' align='center' color='textPrimary'>
+                      Terça
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
@@ -183,7 +211,28 @@ const Home = (props) => {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Mista: 06h - 07h - Pedro Toledo
+                      BJJ Mista: 08h - 09h - Pedro Toledo
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Kids: 17h - 18h - Pedro Toledo
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Avançado: 20h - 21h - Pedro Toledo
+                    </Typography>
+                  </MuiThemeProvider>
+                </Paper>
+              </Grid>
+
+
+              <Grid key={1} item>
+                <Paper className={classes.paperGrid}>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h5' align='center' color='textPrimary'>
+                      Quinta
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
@@ -208,17 +257,12 @@ const Home = (props) => {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Mista: 06h - 07h - Pedro Toledo
+                      BJJ Mista: 08h - 09h - Pedro Toledo
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Iniciante: 19h - 20h - Pedro Toledo
-                    </Typography>
-                  </MuiThemeProvider>
-                  <MuiThemeProvider theme={theme}>
-                    <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Avançado: 20h - 21h - Pedro Toledo
+                      BJJ Mista: 19h - 20:30h - Pedro Toledo
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
@@ -233,7 +277,7 @@ const Home = (props) => {
               aria-label="agendar aula"
               edge="start"
             >
-              <LocationOnOutlined style={{ fontSize: 70 }}/>
+              <LocationOnOutlined style={{ fontSize: 70 }} />
             </IconButton>
 
             <MuiThemeProvider theme={theme}>
@@ -278,7 +322,7 @@ const Home = (props) => {
                   <Box marginTop='2em'>
                     <MuiThemeProvider theme={theme}>
                       <Typography variant='h5' align='center'>
-                      Como Chegar? Virar a primeira direita após Academia SmartFit da Rua Silveira Martins.
+                        Como Chegar? Virar a primeira direita após Academia SmartFit da Rua Silveira Martins.
                       </Typography>
                     </MuiThemeProvider>
                   </Box>
@@ -302,10 +346,10 @@ const Home = (props) => {
                   Venha fazer parte da Equipe Toledo BJJ !!!
                 </Typography>
               </MuiThemeProvider>
-              <img src="/img/home/HOME_PunchIcon.png" height='100em' alt="Punch"/>
+              <img src="/img/home/HOME_PunchIcon.png" height='100em' alt="Punch" />
             </Box>
-            
-            <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' marginTop='2em'paddingLeft='3em' paddingRight='3em'>
+
+            <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' marginTop='2em' paddingLeft='3em' paddingRight='3em'>
               <MuiThemeProvider theme={theme}>
                 <Typography variant='h4' align='center' color='textPrimary'>
                   Agende uma Aula Experimental pelo nosso WhatsApp!
@@ -317,7 +361,7 @@ const Home = (props) => {
                 edge="start"
                 href={'http://tinyurl.com/tf0jq6ou/'}
               >
-                <WhatsAppIcon style={{ fontSize: 70 }}/>
+                <WhatsAppIcon style={{ fontSize: 70 }} />
               </IconButton>
             </Box>
           </Box>
@@ -328,14 +372,14 @@ const Home = (props) => {
                 Siga Nossas Redes
               </Typography>
             </MuiThemeProvider>
-            
+
             <Box display='flex' flexDirection='row' justifyContent='center' alignItems='center'>
               <IconButton
                 aria-label="Instagram-Link"
                 edge="start"
                 href={'https://www.instagram.com/toledojiujitsu/'}
               >
-                <InstagramIcon style={{ fontSize: 70 }}/>
+                <InstagramIcon style={{ fontSize: 70 }} />
               </IconButton>
 
               <IconButton
@@ -344,7 +388,7 @@ const Home = (props) => {
                 edge="start"
                 href={'https://www.youtube.com/channel/UCrf9r_--4MHHMCwuNsppXNg'}
               >
-                <YoutubeIcon style={{ fontSize: 70 }}/>
+                <YoutubeIcon style={{ fontSize: 70 }} />
               </IconButton>
             </Box>
           </Box>
@@ -353,7 +397,7 @@ const Home = (props) => {
         <AppBar color="primary" className={classes.footer}>
           <MuiThemeProvider theme={theme}>
             <Typography variant='h6'>
-            TOLEDO BJJ ACADEMY © TODOS OS DIREITOS RESERVADOS
+              TOLEDO BJJ ACADEMY © TODOS OS DIREITOS RESERVADOS
             </Typography>
           </MuiThemeProvider>
         </AppBar>
