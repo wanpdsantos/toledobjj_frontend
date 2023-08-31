@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   paperGrid: {
     display: 'flex',
     flexDirection: 'column',
-    height: '15em',
+    height: '20em',
     width: '25em',
     justifyContent: 'center',
     alignItems: 'center',
@@ -70,7 +70,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
-  }
+  },
+  button: {
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light,
+    },
+  },
 }));
 
 let theme = createMuiTheme({
@@ -161,22 +166,37 @@ const Home = (props) => {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Mista: 08h - 09h - Pedro Toledo
+                      BJJ Fundamentos: 06h - 07h
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Kids: 17h - 18h - Pedro Toledo
+                      BJJ Turma Mista: 08h - 09h
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Iniciante: 19h - 20h - Pedro Toledo
+                      BJJ Kids: 09h - 10h
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Avançado: 20h - 21h - Pedro Toledo
+                      BJJ Kids: 17h - 18h
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Kids: 18h - 19h
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Iniciante: 19h - 20h
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Avançado: 20h - 21h
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
@@ -191,12 +211,17 @@ const Home = (props) => {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Iniciante: 19h - 20h - Pedro Toledo
+                      BJJ Turma Mista: 07h - 08h
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Avançado: 20h - 21h - Pedro Toledo
+                      BJJ Iniciante: 19h - 20h
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Avançado: 20h - 21h
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
@@ -211,17 +236,27 @@ const Home = (props) => {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Mista: 08h - 09h - Pedro Toledo
+                      BJJ Fundamentos: 06h - 07h
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Kids: 17h - 18h - Pedro Toledo
+                      BJJ Mista: 08h - 09h
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Avançado: 20h - 21h - Pedro Toledo
+                      BJJ Kids: 18h - 19h
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      Yoga: 19h - 20h
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Avançado: 20h - 21h
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
@@ -237,12 +272,17 @@ const Home = (props) => {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Iniciante: 19h - 20h - Pedro Toledo
+                      BJJ Turma Mista: 07h - 08h
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Avançado: 20h - 21h - Pedro Toledo
+                      BJJ Kids: 17h - 18h
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Turma Mista: 19h - 20h
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
@@ -257,12 +297,27 @@ const Home = (props) => {
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Mista: 08h - 09h - Pedro Toledo
+                      BJJ Fundamentos: 06h - 07h
                     </Typography>
                   </MuiThemeProvider>
                   <MuiThemeProvider theme={theme}>
                     <Typography variant='h6' align='center' color='textPrimary'>
-                      BJJ Mista: 19h - 20:30h - Pedro Toledo
+                      BJJ Turma Mista: 08h - 09h
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Kid: 09h - 10h
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Kids: 18h - 19h
+                    </Typography>
+                  </MuiThemeProvider>
+                  <MuiThemeProvider theme={theme}>
+                    <Typography variant='h6' align='center' color='textPrimary'>
+                      BJJ Open Mat: 19h - 20h
                     </Typography>
                   </MuiThemeProvider>
                 </Paper>
@@ -331,7 +386,7 @@ const Home = (props) => {
 
               <Grid key={2} item>
                 <Box>
-                  <iframe async defer src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.166029958064!2d-38.466977684564974!3d-12.961225563114171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161ac2ba457403%3A0x6bc6be9da33acefa!2sR.%20Inhambupe%20-%20Resgate%2C%20Salvador%20-%20BA%2C%2040301-110!5e0!3m2!1spt-BR!2sbr!4v1615851105943!5m2!1spt-BR!2sbr" width="400" height="300"></iframe>
+                    <iframe async defer src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d972.0431406781125!2d-38.4664580245156!3d-12.96080729023174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161becebec0c01%3A0x49b51edb0fabdbde!2sToledo%20Jiu%20Jitsu!5e0!3m2!1spt-BR!2sbr!4v1693484541779!5m2!1spt-BR!2sbr" width="400" height="300" allowfullscreen="" loading="lazy"></iframe>
                 </Box>
               </Grid>
             </Grid>
@@ -354,15 +409,23 @@ const Home = (props) => {
                 <Typography variant='h4' align='center' color='textPrimary'>
                   Agende uma Aula Experimental pelo nosso WhatsApp!
                 </Typography>
+                <IconButton
+                    className={classes.button}
+                    style={{ color: green[500] }}
+                    aria-label="agendar aula"
+                    edge="start"
+                    href={'http://tinyurl.com/tf0jq6ou/'}
+                >
+                    <WhatsAppIcon style={{ fontSize: 70 }} />
+                </IconButton>
               </MuiThemeProvider>
-              <IconButton
-                style={{ color: green[500] }}
-                aria-label="agendar aula"
-                edge="start"
-                href={'http://tinyurl.com/tf0jq6ou/'}
-              >
-                <WhatsAppIcon style={{ fontSize: 70 }} />
-              </IconButton>
+              <MuiThemeProvider theme={theme}>
+                
+                <Typography variant='h4' align='center' color='textPrimary'>
+                  Contato: (71) 99145-3771
+                </Typography>
+              </MuiThemeProvider>
+              
             </Box>
           </Box>
 
