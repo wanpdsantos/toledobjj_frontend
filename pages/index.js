@@ -407,7 +407,7 @@ const Home = (props) => {
             <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' marginTop='2em' paddingLeft='3em' paddingRight='3em'>
               <MuiThemeProvider theme={theme}>
                 <Typography variant='h4' align='center' color='textPrimary'>
-                  Agende uma Aula Experimental pelo nosso WhatsApp!
+                  Agende uma Aula Experimental pelo nosso WhatsApp: (71) 99145-3771
                 </Typography>
                 <IconButton
                     className={classes.button}
@@ -419,13 +419,6 @@ const Home = (props) => {
                     <WhatsAppIcon style={{ fontSize: 70 }} />
                 </IconButton>
               </MuiThemeProvider>
-              <MuiThemeProvider theme={theme}>
-                
-                <Typography variant='h4' align='center' color='textPrimary'>
-                  Contato: (71) 99145-3771
-                </Typography>
-              </MuiThemeProvider>
-              
             </Box>
           </Box>
 
