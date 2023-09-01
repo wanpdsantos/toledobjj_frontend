@@ -414,7 +414,7 @@ const Home = (props) => {
                     style={{ color: green[500] }}
                     aria-label="agendar aula"
                     edge="start"
-                    href={'http://tinyurl.com/tf0jq6ou/'}
+                    href={'https://wa.me/5571991453771'}
                 >
                     <WhatsAppIcon style={{ fontSize: 70 }} />
                 </IconButton>
