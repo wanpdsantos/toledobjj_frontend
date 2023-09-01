@@ -70,6 +70,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center center",
+    flexBasis:'fit-content',
+    paddingTop:'2em',
+    paddingBottom:'2em',
   },
   button: {
     '&:hover': {
@@ -393,7 +396,7 @@ const Home = (props) => {
           </Box>
         </Box>
 
-        <Box marginTop='4em' className={classes.boxSessions} width='100%' >
+        <Box flexDirection='column' marginTop='4em' className={classes.boxSessions} >
           <Box display='flex' flexDirection='column' width='100%' justifyContent='center' alignItems='center' height='30em' className={classes.BoxVenhaFazerParte}>
             <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center' marginBottom='2em' paddingLeft='3em' paddingRight='3em'>
               <MuiThemeProvider theme={theme}>
