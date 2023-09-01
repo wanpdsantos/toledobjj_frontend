@@ -14,7 +14,7 @@ const HomeCarousel = (items) => {
   return (
     <Carousel>
       {
-        items.map( (thumb, title,index) => <Item key={index} thumb={thumb} title={title} /> )
+        items.map( (thumb, title,index) => <Item key={index + title} thumb={thumb} title={title} /> )
       }
     </Carousel>
   )
